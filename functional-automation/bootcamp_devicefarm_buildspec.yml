@@ -32,4 +32,4 @@ phases:
 
   post_build:
     commands:
-      - aws s3 cp . s3://$BUCKET_NAME/awswrkshp_functional_assurance_smoke/ --recursive --exclude "*" --include "*.html"
+      - aws s3 cp . s3://aws-wrkshp-f9fe3190/bootcamp/devicefarm --recursive --exclude "*" --include "*.html"
