@@ -1,0 +1,9 @@
+git clone https://github.com/TechnologyBootCamps/aws-bootcamp
+cd ~
+mkdir aws-commit-bootcamp
+git init
+copy from cloud9 GUI
+git add .
+git commit -m "init commit"  --quiet
+git remote add origin https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/bootcamp-testing.git
+git push -u origin master --quiet

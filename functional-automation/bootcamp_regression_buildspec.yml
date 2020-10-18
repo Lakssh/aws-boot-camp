@@ -6,17 +6,18 @@ env:
     #    BUCKET_NAME: wrkshpSecrets:bucketname
     #    backendPrivateIP: wrkshpSecrets:backendPrivateIP
     #    New Values
-    BUCKET_NAME: bootcampSecrets:Reports
-    backendPrivateIP: bootcamp:AppServer_PrivateIP
-    region: bootcamp:Region
-    publicIP: bootcamp:AppServer_PublicIP
-    albURL: bootcamp:ApplicationURL_DevEnv
+#    BUCKET_NAME: bootcampSecrets:Reports
+#    backendPrivateIP: bootcamp:AppServer_PrivateIP
+#    region: bootcamp:Region
+#    publicIP: bootcamp:AppServer_PublicIP
+#    albURL: bootcamp:ApplicationURL_DevEnv
 
 phases:
   install:
     runtime-versions:
       java: corretto8
     commands:
+             - cd functional-automation
     #        - curl -s --connect-timeout 8 -d "{\"privateIP\":\"$backendPrivateIP\",\"publicIP\":\"$publicIP\",\"region\":\"$region\",\"bucket\":\"$BUCKET_NAME\"}"   -H 'Content-Type:application/json' http://$backendPrivateIP:3337/api/v1/aws_dashboard_report/secrets/update || true
     #        - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
     #        - unzip chromedriver_linux64.zip

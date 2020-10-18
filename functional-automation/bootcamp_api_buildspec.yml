@@ -6,11 +6,11 @@ env:
     #    BUCKET_NAME: wrkshpSecrets:bucketname
     #    backendPrivateIP: wrkshpSecrets:backendPrivateIP
     #    New Values
-    BUCKET_NAME: bootcampSecrets:Reports
-    backendPrivateIP: bootcamp:AppServer_PrivateIP
-    region: bootcamp:Region
-    publicIP: bootcamp:AppServer_PublicIP
-    albURL: bootcamp:ApplicationURL_DevEnvcrets:AppServer_PrivateIP
+#    BUCKET_NAME: bootcampSecrets:Reports
+#    backendPrivateIP: bootcamp:AppServer_PrivateIP
+#    region: bootcamp:Region
+#    publicIP: bootcamp:AppServer_PublicIP
+#    albURL: bootcamp:ApplicationURL_DevEnvcrets:AppServer_PrivateIP
 
 phases:
   install:
