@@ -1,7 +1,7 @@
 @UITest
 Feature: Mythical Mysfits Eshop UI login feature
 
-  @Search
+  @Search @Regression @Smoke
   Scenario Outline: E-Shop Application - Create New Account
     Given User launched eshop login page in "Web"
     When User create account with "<FirstName>", "<LastName>", "<EmailID>" and "<Password>"
@@ -20,7 +20,7 @@ Feature: Mythical Mysfits Eshop UI login feature
       | EmailID           | Password  |
       | testuser@shop.com | Testing$1 |
 
-  @Smoke
+  @Regression
   Scenario Outline: Login to the E-Shop Application with Wrong Password
     Given User launched eshop login page in "Web"
     When User logged in eshop using the invalid emailid "<EmailID>" and the invalid password "<Password>"

@@ -1,0 +1,35 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    #    Old Values
+    #    BUCKET_NAME: wrkshpSecrets:bucketname
+    #    backendPrivateIP: wrkshpSecrets:backendPrivateIP
+    #    New Values
+    BUCKET_NAME: bootcampSecrets:Reports
+    backendPrivateIP: bootcamp:AppServer_PrivateIP
+    region: bootcamp:Region
+    publicIP: bootcamp:AppServer_PublicIP
+    albURL: bootcamp:ApplicationURL_DevEnv
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+    commands:
+        #        - curl -s --connect-timeout 8 -d "{\"privateIP\":\"$backendPrivateIP\",\"publicIP\":\"$publicIP\",\"region\":\"$region\",\"bucket\":\"$BUCKET_NAME\"}"   -H 'Content-Type:application/json' http://$backendPrivateIP:3337/api/v1/aws_dashboard_report/secrets/update || true
+        #        - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
+        #        - unzip chromedriver_linux64.zip
+        #        - mv chromedriver /usr/bin/chromedriver
+        #        - chromedriver --version
+        #        - curl https://intoli.com/install-google-chrome.sh | bash
+        #        - mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
+        #        - google-chrome --version && which google-chrome
+
+  build:
+    commands:
+      - mvn clean test -Dcucumber.options="--tags '@UITest and @Smoke'" -DExecutionPlatform="AWS_CHROME"
+
+  post_build:
+    commands:
+      - aws s3 cp . s3://$BUCKET_NAME/awswrkshp_functional_assurance_smoke/ --recursive --exclude "*" --include "*.html"

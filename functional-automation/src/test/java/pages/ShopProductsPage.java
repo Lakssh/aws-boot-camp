@@ -22,7 +22,7 @@ public class ShopProductsPage extends ShopMasterPageWeb {
 
 
 
-    @FindBy(id = "productsearch1")
+    @FindBy(id = "productsearch")
     WebElement txtProductSearch;
 
     @FindBy(id = "searchicon")

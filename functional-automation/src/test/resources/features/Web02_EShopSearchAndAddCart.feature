@@ -1,7 +1,7 @@
 @UITest
 Feature: Mythical Mysfits Eshop UI  search feature
 
-  @Search
+  @Search @Regression
   Scenario Outline: Search Product
     Given User launched eshop login page in "Web"
     When User logged in eshop using the valid emailid "<EmailID>" and the valid password "<Password>"
@@ -11,10 +11,10 @@ Feature: Mythical Mysfits Eshop UI  search feature
     Examples:
       | EmailID           | Password  | Product                       |
       | testuser@shop.com | Testing$1 | Apple iPhone 6s Plus          |
-      | testuser@shop.com | Testing$1 | Apple iPhone XR               |
-      | testuser@shop.com | Testing$1 | Fitbit Versa                  |
-      | testuser@shop.com | Testing$1 | Samsung Galaxy Note9          |
-      | testuser@shop.com | Testing$1 | Apple Watch Series 4 Aluminum |
+#      | testuser@shop.com | Testing$1 | Apple iPhone XR               |
+#      | testuser@shop.com | Testing$1 | Fitbit Versa                  |
+#      | testuser@shop.com | Testing$1 | Samsung Galaxy Note9          |
+#      | testuser@shop.com | Testing$1 | Apple Watch Series 4 Aluminum |
 
   @cart
   Scenario Outline: Add product to the Cart
