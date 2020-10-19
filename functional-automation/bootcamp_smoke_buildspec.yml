@@ -1,7 +1,7 @@
 version: 0.2
 
-env:
-  secrets-manager:
+#env:
+#  secrets-manager:
     #    Old Values
     #    BUCKET_NAME: wrkshpSecrets:bucketname
     #    backendPrivateIP: wrkshpSecrets:backendPrivateIP
