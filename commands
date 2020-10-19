@@ -1,3 +1,4 @@
+Ensure you have S3 bucket created.
 Create new repo in was commit : bootcamp-testing
 
 git clone https://github.com/TechnologyBootCamps/aws-bootcamp

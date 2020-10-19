@@ -33,4 +33,4 @@ phases:
 
   post_build:
     commands:
-      - aws s3 cp . s3://aws-wrkshp-f9fe3190/bootcamp/smoke/ --recursive --exclude "*" --include "*.html"
+      - aws s3 cp . s3://bootcamp-results/smoke/ --recursive --exclude "*" --include "*.html"
