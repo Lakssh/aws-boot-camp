@@ -1,13 +1,11 @@
-Ensure you have S3 bucket created.
-Create new repo in was commit : bootcamp-testing
-
-git clone https://github.com/TechnologyBootCamps/aws-bootcamp
-ls
-mkdir aws-commit-bootcamp
-cd aws-commit-bootcamp
-git init
-copy from cloud9 GUI
-git add .
-git commit -m "init commit"  --quiet
-git remote add origin https://git-codecommit.us-west-2.amazonaws.com/v1/repos/bootcamp-testing
-git push -u origin master --quiet
+1. Ensure you have S3 bucket created.
+2. Create new repo in aws commit : functional-automation
+3. Clone the new repo : git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/functional-automation
+4. Clone the repo from github : git clone https://github.com/TechnologyBootCamps/aws-bootcamp
+5. Copy from cloud9 GUI
+6. Execute the commands below
+    cd functional-automation
+    git add .
+    git commit -m "init commit"  --quiet
+    git push -u origin master --quiet
+7. Refresh and view the new repository : functional-automation
