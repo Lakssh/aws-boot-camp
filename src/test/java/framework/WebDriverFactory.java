@@ -93,7 +93,7 @@ public class WebDriverFactory {
                     testGridUrl = getTestGridUrl();
                     DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
                     chromeOptions = new ChromeOptions();
-                    chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+                    //                    chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
                     desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new RemoteWebDriver(testGridUrl, desiredCapabilities);
                     break;

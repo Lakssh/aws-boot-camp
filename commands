@@ -1,6 +1,6 @@
 1. Ensure you have S3 bucket created.
 2. Create new repo in aws commit : functional-automation
-3. Clone the new repo : git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/functional-automation
+3. Clone the new aws code commit repo : git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/functional-automation
 4. Clone the repo from github : git clone https://github.com/TechnologyBootCamps/aws-bootcamp-functional-automation
 5. Copy only file and folder from aws-bootcamp-functional-automation to functional-automation using cloud9 GUI
 6. Execute the commands below
