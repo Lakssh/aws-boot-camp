@@ -46,8 +46,7 @@ public class WebDriverFactory {
             //LOCAL_CHROME, LOCAL_FIREFOX, AWS_CHROME, AWS_FIREFOX, AWS_DEVICEFARM_CHROME, AWS_DEVICEFARM_FIREFOX
             Map<String, String> mobileEmulation = new HashMap<>();
             //Nexus 7, Galaxy S5, iPad, Pixel 2
-            if (!strDevice.isEmpty() && !strDevice.equalsIgnoreCase("Web"))
-            {
+            if (!strDevice.isEmpty() && !strDevice.equalsIgnoreCase("Web")) {
                 mobileEmulation.put("deviceName", strDevice);
             }
 
@@ -100,6 +99,13 @@ public class WebDriverFactory {
                 case "AWS_DEVICEFARM_FIREFOX":
                     testGridUrl = getTestGridUrl();
                     driver = new RemoteWebDriver(testGridUrl, DesiredCapabilities.firefox());
+                    ExtentCucumberAdapter.addTestStepLog(strExecutionPlatform + " Driver Creation Completed");
+                    break;
+                case "AWS_FARGATE":
+                    DesiredCapabilities chromeCapabilities = DesiredCapabilities.chrome();
+                    ChromeOptions chromeOpt = new ChromeOptions();
+                    chromeCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOpt);
+                    driver = new RemoteWebDriver(new URL("http://3.19.74.252:4444/wd/hub"), chromeCapabilities);
                     ExtentCucumberAdapter.addTestStepLog(strExecutionPlatform + " Driver Creation Completed");
                     break;
                 default:

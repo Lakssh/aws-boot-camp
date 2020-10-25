@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+    commands:
+
+  build:
+    commands:
+      - mvn clean test -Dcucumber.options="--tags '@UITest and @Smoke'" -DExecutionPlatform="AWS_FARGATE"
+
+  post_build:
+    commands:
+      - aws s3 cp . s3://bootcamp-results/fargate/ --recursive --exclude "*" --include "*.html"
