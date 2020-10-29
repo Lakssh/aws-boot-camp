@@ -11,17 +11,18 @@ Camp1 : EC2 Session Commands
 
 Camp3 : Steps For Copy Scripts From Github To CodeCommit
 ---------------------------------------------------------
-1. Ensure you have S3 bucket created as 233632-bootcamp-results
-2. Create new repo in aws commit : 233632-mohanraj-functional-automation
-3. Clone the new aws code commit repo : git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/233632-mohanraj-functional-automation
+1. Ensure you have S3 bucket created as "233632-mohanraj-mathavan-bootcamp-results"
+    Create folders like smoke, regression and devicefarm under "233632-mohanraj-mathavan-bootcamp-results"
+2. Create new repo in aws commit : 233632-mohanraj-mathavan-functional-automation
+3. Clone the new aws code commit repo : git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/233632-mohanraj-mathavan-functional-automation
 4. Clone the repo from github : git clone https://github.com/TechnologyBootCamps/aws-bootcamp-functional-automation
-5. Copy only file and folder from aws-bootcamp-functional-automation to 233632-mohanraj-functional-automation using cloud9 GUI
+5. Copy only file and folder from aws-bootcamp-functional-automation to 233632-mohanraj-mathavan-functional-automation using cloud9 GUI
 6. Execute the commands below
     cd functional-automation
     git add .
     git commit -m "init commit"  --quiet
     git push -u origin master --quiet
-7. Refresh and view the new repository : 233632-mohanraj-functional-automation
+7. Refresh and view the new repository : 233632-mohanraj-mathavan-functional-automation
 
  
 
