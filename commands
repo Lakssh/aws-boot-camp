@@ -33,6 +33,11 @@ Camp3 : Steps For Copy Scripts From Github To CodeCommit
     git push -u origin master --quiet
 7. Refresh and view the new repository : 233632-mohanraj-mathavan-functional-automation
 
+8. Create Code build for smoke and regression
+9. Execute code build and verify the results in S3
+10. Create Code pipeline to run smoke and regreession in sequential
+
+
  
 
 Camp5 : 
