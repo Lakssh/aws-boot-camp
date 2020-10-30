@@ -35,7 +35,20 @@ Camp3 : Steps For Copy Scripts From Github To CodeCommit
 
  
 
-Camp5 : Fargate Session Commands 
+Camp5 : 
+-----------------------------
+ECS+EC2 Highlevel Steps:
+------------------------
+1. Cluster creation
+2. Task definitions Creation (nginxdemos/hello ,	Hard limit => 256, 	Port 80 : 80)
+3. Create Service in cluster to run task definition (Number of tasks should be 1)
+4. Verify EC2 instance
+5. Launch nginx portal by just navigating EC2 ip address
+
+
+
+
+Fargate Session Commands 
 --------------------------------
 HUB:
 ----
