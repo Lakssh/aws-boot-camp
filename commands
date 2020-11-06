@@ -72,10 +72,10 @@ press - "click" button
 HUB - Task defintion:
 ---------------------
 Create Task defintion for "aws-233632-hub"
-Image : selenium/hub:3.141.59-zirconium
 task memory : 1 gb
 task cpu : 0.5 vcpu
 add container as "seleniumhub"
+Image : selenium/hub:3.141.59-zirconium
 Port : 4444
 Entry points :  /bin/bash,-c
 Command   :  /bin/bash -c "export GRID_HUB_HOST=\"$(cat /etc/hosts | tail -1 | awk {'print $1'})\" && /bin/bash /opt/bin/entry_point.sh"
@@ -84,10 +84,11 @@ Command   :  /bin/bash -c "export GRID_HUB_HOST=\"$(cat /etc/hosts | tail -1 | a
 Node - Task defintion:
 ----------------------
 Create Task defintion for "aws-233632-node"
-Image : selenium/node-chrome:3.141.59-zirconium
+
 task memory : 1 gb
 task cpu : 0.5 vcpu
 add container as "seleniumnode"
+Image : selenium/node-chrome:3.141.59-zirconium
 Port : 5555
 Entry points :  /bin/bash,-c
 Command   :  /bin/bash -c "export NODE_HOST=\"$(curl -s $ECS_CONTAINER_METADATA_URI/task | jq -r '.Containers[0].Networks[0].IPv4Addresses[0]')\" && /bin/bash /opt/bin/entry_point.sh"
