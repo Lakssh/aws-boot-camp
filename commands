@@ -65,7 +65,9 @@ Create default VPC
 ------------------------------------------------------------------
 Cluster creation:
 ------------------
-Create Cluster using Networking only - fargate as "aws-233632-grid-cluster"
+Create Cluster using Networking only - 
+cluster name as "aws-233632-grid-cluster"
+press - "click" button
 ------------------------------------------------------------------
 HUB - Task defintion:
 ---------------------
