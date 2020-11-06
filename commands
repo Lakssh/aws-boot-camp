@@ -50,21 +50,83 @@ ECS+EC2 Highlevel Steps:
 4. Verify EC2 instance
 5. Launch nginx portal by just navigating EC2 ip address
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Fargate Session Commands 
---------------------------------
-HUB:
-----
+-----------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------
+Namespace creation:
+-------------------
+Create namespace in cloudmap as "233632_bootcamp"
+------------------------------------------------------------------
+Cluster creation:
+------------------
+Create Cluster using Networking only - fargate as "aws-233632-grid-cluster"
+------------------------------------------------------------------
+HUB - Task defintion:
+---------------------
+Create Task defintion for "aws-233632-hub"
 Image : selenium/hub:3.141.59-zirconium
+task memory : 1 gb
+task cpu : 0.5 vcpu
+add container as "seleniumhub"
+Port : 4444
 Entry points :  /bin/bash,-c
 Command   :  /bin/bash -c "export GRID_HUB_HOST=\"$(cat /etc/hosts | tail -1 | awk {'print $1'})\" && /bin/bash /opt/bin/entry_point.sh"
 
- 
-
-NODE:
------
+------------------------------------------------------------------
+Node - Task defintion:
+----------------------
+Create Task defintion for "aws-233632-node"
 Image : selenium/node-chrome:3.141.59-zirconium
-Entry points :  /bin/bash,-c 
+task memory : 1 gb
+task cpu : 0.5 vcpu
+add container as "seleniumnode"
+Port : 5555
+Entry points :  /bin/bash,-c
 Command   :  /bin/bash -c "export NODE_HOST=\"$(curl -s $ECS_CONTAINER_METADATA_URI/task | jq -r '.Containers[0].Networks[0].IPv4Addresses[0]')\" && /bin/bash /opt/bin/entry_point.sh"
+Environment variables :
+HUB_PORT => 4444
+HUB_HOST => hubservice.233632_bootcamp
+
+
+View Task Defintions :
+aws-233632-hub
+aws-233632-node
+------------------------------------------------------------------
+HUB - Service creation:
+-----------------------
+Goto Cluster => aws-233632-grid-cluster
+Create Service for "aws-233632-hub"
+service name as : aws-hub-serivce
+Number of tasks : 1
+Next
+select cluster vpc
+select subnet
+Edit group to default group
+public ip enabled
+
+
+Enable service discovery integrations
+select namespace as "233632_bootcamp"
+service discovery name as "hubservice"
+------------------------------------------------------------------
+NODE - Service creation:
+------------------------
+Goto Cluster => aws-233632-grid-cluster
+Create Service for "aws-233632-node"
+service name as : aws-node-service
+Number of tasks : 1
+Next
+
+select cluster vpc
+select subnet
+Edit group to default group
+public ip enabled
+
+Enable service discovery integrations
+select namespace as "233632_bootcamp"
+service discovery name as "node"
+------------------------------------------------------------------
