@@ -27,7 +27,7 @@ Camp3 : Steps For Copy Scripts From Github To CodeCommit
 4. Clone the repo from github : git clone https://github.com/TechnologyBootCamps/aws-bootcamp-functional-automation
 5. Copy only file and folder from aws-bootcamp-functional-automation to 233632-mohanraj-mathavan-functional-automation using cloud9 GUI
 6. Execute the commands below
-    cd functional-automation
+    cd 233632-mohanraj-mathavan-functional-automation
     git add .
     git commit -m "init commit"  --quiet
     git push -u origin master --quiet
