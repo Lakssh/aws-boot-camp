@@ -60,6 +60,8 @@ Fargate Session Commands
 Namespace creation:
 -------------------
 Create namespace in cloudmap as "233632_bootcamp"
+Select "API calls and DNS queries in VPCs"
+Create default VPC
 ------------------------------------------------------------------
 Cluster creation:
 ------------------
